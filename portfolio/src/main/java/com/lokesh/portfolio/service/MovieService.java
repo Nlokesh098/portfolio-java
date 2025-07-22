@@ -9,7 +9,9 @@ public interface MovieService {
 
     Movie fetchMovie(String name);
 
-    List<List<Cast>> fetchByName(String name);
+    String fetchByName(String name);
+
+    void movieEntry(List<Movie> movieListBody);
 
 
 }

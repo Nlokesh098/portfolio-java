@@ -13,6 +13,7 @@ import java.util.List;
 @Component
 public class MovieServImpl implements MovieService {
 
+    List<Movie> MovieList = new ArrayList<>();
 
     @Override
     public Movie fetchMovie(String name) {
@@ -29,10 +30,21 @@ public class MovieServImpl implements MovieService {
     }
 
     @Override
-    public List<List<Cast>> fetchByName(String name){
+    public String fetchByName(String name){
         Movie mv1 = fetchMovie("titanic");
-        List<List<Cast>> al = new ArrayList<>();
-        al.add(mv1.getCastAndCrew());
-        return al;
+//        List<String> al = new ArrayList<>();
+//        al.add(mv1.getDirector());
+        return mv1.getDirector();
     }
+
+    @Override
+    public void movieEntry(List<Movie> movieListBody) {
+        if(!movieListBody.isEmpty()){
+            for(int i =0;i<movieListBody.size();i++) {
+                    MovieList.add(movieListBody.get(i));
+            }
+        }
+    }
+
+
 }

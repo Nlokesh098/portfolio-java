@@ -14,6 +14,10 @@ public class Movie {
 
     private String name;
 
+    private String year;
+
+    private String language;
+
     private String director;
 
     private List<Cast> castAndCrew;
