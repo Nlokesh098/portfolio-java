@@ -7,6 +7,7 @@ import com.lokesh.portfolio.service.MovieService;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Component
@@ -25,5 +26,13 @@ public class MovieServImpl implements MovieService {
         ct.setSupporting(List.of("loki", "sai"));
         mv.setCastAndCrew(List.of(ct));
         return mv;
+    }
+
+    @Override
+    public List<List<Cast>> fetchByName(String name){
+        Movie mv1 = fetchMovie("titanic");
+        List<List<Cast>> al = new ArrayList<>();
+        al.add(mv1.getCastAndCrew());
+        return al;
     }
 }

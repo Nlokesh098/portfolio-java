@@ -1,5 +1,6 @@
 package com.lokesh.portfolio.controllers;
 
+import com.lokesh.portfolio.beans.Cast;
 import com.lokesh.portfolio.beans.Movie;
 import com.lokesh.portfolio.service.impl.MovieServImpl;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,6 +9,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.List;
 // import ;
 
 @RestController
@@ -26,5 +29,10 @@ public class HomeController {
     public ResponseEntity<Movie> fetchById(){
         return new ResponseEntity<>(msi.fetchMovie("lokk"), HttpStatusCode.valueOf(201));
         //return msi.fetchMovie("lokk");
+    }
+
+    @GetMapping("/byName")
+    public List<List<Cast>> getByNames(){
+        return msi.fetchByName("titanic");
     }
 }
