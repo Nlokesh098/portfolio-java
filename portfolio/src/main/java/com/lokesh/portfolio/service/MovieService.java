@@ -13,5 +13,6 @@ public interface MovieService {
 
     void movieEntry(List<Movie> movieListBody);
 
+    void entry(List<Movie> movieListBody);
 
 }

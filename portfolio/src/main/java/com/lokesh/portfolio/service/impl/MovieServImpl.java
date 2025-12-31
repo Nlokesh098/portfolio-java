@@ -4,11 +4,14 @@ package com.lokesh.portfolio.service.impl;
 import com.lokesh.portfolio.beans.Cast;
 import com.lokesh.portfolio.beans.Movie;
 import com.lokesh.portfolio.service.MovieService;
+import org.jetbrains.annotations.NotNull;
 import org.springframework.stereotype.Component;
-import org.springframework.stereotype.Service;
+//import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 @Component
 public class MovieServImpl implements MovieService {
@@ -38,11 +41,23 @@ public class MovieServImpl implements MovieService {
     }
 
     @Override
-    public void movieEntry(List<Movie> movieListBody) {
+    public void movieEntry(@NotNull List<Movie> movieListBody) {
         if(!movieListBody.isEmpty()){
             for(int i =0;i<movieListBody.size();i++) {
                     MovieList.add(movieListBody.get(i));
             }
+            System.out.println("movie entered successfully!!");
+        }
+    }
+
+    @Override
+    public void entry(@NotNull List<Movie> movieListBody){
+        Set<Movie> se = new HashSet<>();
+        if(!movieListBody.isEmpty()){
+            for(int i =0;i<movieListBody.size();i++){
+                se.add(movieListBody.get(i));
+            }
+            System.out.println("movie entered successfully!!");
         }
     }
 

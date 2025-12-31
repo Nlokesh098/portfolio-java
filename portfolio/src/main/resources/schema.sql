@@ -1,0 +1,21 @@
+--CREATE TABLE movies (
+--    id INT PRIMARY KEY AUTO_INCREMENT,
+--    name VARCHAR(255) NOT NULL,
+--    year VARCHAR(10),
+--    language VARCHAR(50),
+--    director VARCHAR(100)
+--);
+--
+--CREATE TABLE movie_cast (
+--    id INT PRIMARY KEY AUTO_INCREMENT,
+--    actor VARCHAR(100),
+--    actress VARCHAR(100),
+--    movie_id INT NOT NULL,
+--    FOREIGN KEY (movie_id) REFERENCES movies(id) ON DELETE CASCADE
+--);
+--
+--CREATE TABLE supporting_cast (
+--    cast_id INT NOT NULL,
+--    supporting_actor VARCHAR(100),
+--    FOREIGN KEY (cast_id) REFERENCES movie_cast(id) ON DELETE CASCADE
+--);

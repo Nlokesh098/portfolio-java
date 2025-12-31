@@ -5,7 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
-@ComponentScan(basePackages = {"com.lokesh.portfolio", "com.lokesh.somethingelse"})
+//@ComponentScan(basePackages = {"com.lokesh.portfolio", "com.lokesh.somethingelse"})
 public class PortfolioApplication {
 
 	public static void main(String[] args) {
