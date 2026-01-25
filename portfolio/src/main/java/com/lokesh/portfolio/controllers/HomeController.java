@@ -49,7 +49,7 @@ public class HomeController {
     @GetMapping ("/movie")
     public ResponseEntity<List<Movie>> fetchById(){
         mRepo.findAll();
-        System.out.println("sample");
+        System.out.println("check");
         return new ResponseEntity<>(mRepo.findAll(), HttpStatus.OK);
         //return msi.fetchMovie("lokk");
     }
