@@ -27,6 +27,7 @@ public class HomeController {
     public final MovieRepository mRepo;
 
     // constructor injection is performed here, most preferred.
+    @Autowired
     public HomeController(MovieServImpl msi, MovieRepository mRepo){
         this.msi = msi;
         this.mRepo = mRepo;
@@ -69,9 +70,9 @@ public class HomeController {
         return "Lokesh";
     }
 
-//    @PostMapping("/entry")
-//    public void entry(List<Movie> movieListBody){
-//        msi.entry(movieListBody);
-//        return new ResponseEntity<>(HttpStatusCode.valueOf(201));;
-//    }
+    @PostMapping("/entry")
+    public ResponseEntity<Void> entry(List<Movie> movieListBody){
+        msi.entry(movieListBody);
+        return new ResponseEntity<Void>(HttpStatusCode.valueOf(201));
+    }
 }

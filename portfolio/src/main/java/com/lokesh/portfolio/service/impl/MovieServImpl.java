@@ -8,6 +8,7 @@ import org.jetbrains.annotations.NotNull;
 import org.springframework.stereotype.Component;
 //import org.springframework.stereotype.Service;
 
+import java.sql.SQLOutput;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
@@ -51,15 +52,20 @@ public class MovieServImpl implements MovieService {
     }
 
     @Override
-    public void entry(@NotNull List<Movie> movieListBody){
-        Set<Movie> se = new HashSet<>();
-        if(!movieListBody.isEmpty()){
-            for(int i =0;i<movieListBody.size();i++){
-                se.add(movieListBody.get(i));
+    public void entry(@NotNull List<Movie> movieListBody) {
+        try {
+            Set<Movie> se = new HashSet<>();
+            if (!movieListBody.isEmpty()) {
+                for (int i = 0; i < movieListBody.size(); i++) {
+                    se.add(movieListBody.get(i));
+                }
+                System.out.println("movie entered successfully!!");
             }
-            System.out.println("movie entered successfully!!");
+        }catch(Exception e){
+            System.out.println(e);
         }
     }
+
 
 
 }
