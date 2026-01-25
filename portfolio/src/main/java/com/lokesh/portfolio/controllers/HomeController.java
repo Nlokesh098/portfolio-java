@@ -11,6 +11,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
+import java.sql.SQLOutput;
 import java.util.List;
 // import ;
 
@@ -33,6 +34,7 @@ public class HomeController {
         this.mRepo = mRepo;
     }
 
+
     //setter injection is performed here.
 //    private MovieServImpl msi;
 //    @Autowired
@@ -49,6 +51,7 @@ public class HomeController {
     @GetMapping ("/movie")
     public ResponseEntity<List<Movie>> fetchById(){
         mRepo.findAll();
+        System.out.println("sample");
         return new ResponseEntity<>(mRepo.findAll(), HttpStatus.OK);
         //return msi.fetchMovie("lokk");
     }
